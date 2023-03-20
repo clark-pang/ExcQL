@@ -154,3 +154,151 @@ res.locals.output = [
 // }
 // res.locals.inputRows = rows;
 // // REPLACE WITH BRIAN'S INPUT AND REMOVE THIS ^^^^
+
+[
+  {
+    tableName: 'People',
+    columns: [
+      {
+        _id: {
+          primaryKey: true,
+          type: 'SERIAL',
+        },
+      },
+      {
+        name: 'VARCHAR(255)',
+      },
+      {
+        mass: 'FLOAT',
+      },
+      {
+        hair_color: 'VARCHAR(255)',
+      },
+      {
+        skin_color: 'VARCHAR(255)',
+      },
+      {
+        eye_color: 'VARCHAR(255)',
+      },
+      {
+        birth_year: 'VARCHAR(255)',
+      },
+      {
+        gender: 'VARCHAR(255)',
+      },
+      {
+        height: 'INT',
+      },
+      {
+        Species_id: {
+          linkedTable: 'Species._id',
+          type: 'INT',
+        },
+      },
+    ],
+  },
+  {
+    tableName: 'Species',
+    columns: [
+      {
+        _id: {
+          primaryKey: true,
+          type: 'SERIAL',
+        },
+      },
+      {
+        name2: 'VARCHAR(255)',
+      },
+      {
+        classification: 'VARCHAR(255)',
+      },
+      {
+        average_height: 'VARCHAR(255)',
+      },
+      {
+        average_lifespan: 'VARCHAR(255)',
+      },
+      {
+        hair_colors: 'VARCHAR(255)',
+      },
+      {
+        skin_colors: 'VARCHAR(255)',
+      },
+      {
+        eye_colors: 'VARCHAR(255)',
+      },
+      {
+        language: 'VARCHAR(255)',
+      },
+    ],
+  },
+  {
+    tableName: 'Movies',
+    columns: [
+      {
+        _id: {
+          primaryKey: true,
+          type: 'SERIAL',
+        },
+      },
+      {
+        title: 'VARCHAR(255)',
+      },
+      {
+        director: 'VARCHAR(255)',
+      },
+      {
+        producer: 'VARCHAR(255)',
+      },
+      {
+        release_date: 'VARCHAR(255)',
+      },
+    ],
+  },
+  {
+    tableName: 'People_Movies',
+    columns: [
+      {
+        _id: {
+          primaryKey: true,
+          type: 'SERIAL',
+        },
+      },
+      {
+        People_id: {
+          linkedTable: 'People._id',
+          type: 'INT',
+        },
+      },
+      {
+        Movies_id: {
+          linkedTable: 'Movies._id',
+          type: 'INT',
+        },
+      },
+    ],
+  },
+  {
+    tableName: 'Species_Movies',
+    columns: [
+      {
+        _id: {
+          primaryKey: true,
+          type: 'SERIAL',
+        },
+      },
+      {
+        Species_id: {
+          linkedTable: 'Species._id',
+          type: 'INT',
+        },
+      },
+      {
+        Movies_id: {
+          linkedTable: 'Movies._id',
+          type: 'INT',
+        },
+      },
+    ],
+  },
+];

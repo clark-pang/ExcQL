@@ -9,11 +9,11 @@ import store from '../context/store';
 
 const Canvas = ({ activeTab }) => {
   const ctx = useContext(store);
-
+  console.log(ctx.uploadedData, activeTab);
   return (
     <section className="canvas">
       <Script activeTab={activeTab} />
-      <Diagram tables={ctx.uploadedData.diagram || []} activeTab={activeTab} />
+      <Diagram tables={ctx.uploadedData || []} activeTab={activeTab} />
     </section>
   );
 };

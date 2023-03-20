@@ -137,7 +137,7 @@ excelController.convertInputs = async (req, res, next) => {
     }
     // ROWS IS OUR FINAL ROW DATA
     res.locals.dataRows = rows;
-
+    console.log('DATA ROWS:', rows);
     // Rows contains objects for each entire row of data
     // Array that contains each row as an object
     // console.log(res.locals.inputRows);
@@ -242,9 +242,9 @@ excelController.getDataTypes = async (req, res, next) => {
       const newObj = JSON.parse(JSON.stringify(tempObj));
       columnsArr.push(newObj);
     }
-    for (const el of columnsArr) console.log(el.columns);
-    res.locals.output = columnsArr;
 
+    res.locals.output = columnsArr;
+    console.log('COL ARR:', columnsArr);
     return next();
   } catch (error) {
     return next({
