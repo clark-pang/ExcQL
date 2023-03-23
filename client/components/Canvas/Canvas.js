@@ -13,7 +13,7 @@ const Canvas = ({ activeTab }) => {
   return (
     <section className="canvas">
       <Script activeTab={activeTab} />
-      <Diagram tables={ctx.uploadedData || []} activeTab={activeTab} />
+      <Diagram tables={DUMMY_DATA || []} activeTab={activeTab} />
     </section>
   );
 };
